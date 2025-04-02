@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Ghana Made",
     description:
-      "An e-commerce platform showcasing authentic Ghanaian craftsmanship. Built on my iPhone 6s, I don't have a laptop",
+      "An e-commerce platform showcasing authentic Ghanaian craftsmanship. Built on my iPhone 6s, I don't have a laptop. 😕",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/kojoarhinful/GhanaMade",
     live: "https://ghanamade.vercel.app",
@@ -25,7 +25,7 @@ export default function BuildPage() {
     <div>
       <h1 className="text-xl sm:text-lg font-light mb-2">builds</h1>
       <p className="text-base sm:text-sm text-amber-800/60 mb-6">
-        I like hacking on tiny stuff.
+        I like hacking on tiny side projects.
       </p>
 
       <div className="space-y-6 mt-8">
