@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/paper-texture-light.png");
+  background-repeat: repeat;
+  background-color: #f0e9dd;
+  color: #4b3621;
+  padding-bottom: 3rem;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 36 30% 94%;
+    --foreground: 30 20% 30%;
+    --card: 36 30% 97%;
+    --card-foreground: 30 20% 30%;
+    --popover: 36 30% 97%;
+    --popover-foreground: 30 20% 30%;
+    --primary: 30 20% 30%;
+    --primary-foreground: 36 30% 97%;
+    --secondary: 36 20% 94%;
+    --secondary-foreground: 30 20% 30%;
+    --muted: 36 20% 94%;
+    --muted-foreground: 30 10% 45%;
+    --accent: 36 20% 94%;
+    --accent-foreground: 30 20% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 30% 97%;
+    --border: 30 15% 80%;
+    --input: 30 15% 80%;
+    --ring: 30 20% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.companion-banner {
+  background: #c9a978;
+  color: #4b3621;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 300;
+}
+
+/* Text improvements */
+.prose p {
+  color: #5c4a3a;
+}
+
+.text-gray-300 {
+  color: #6b5a4a;
+}
+
+.text-gray-400 {
+  color: #7a6a5a;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.3rem !important;
+  }
+
+  p,
+  .text-sm {
+    font-size: 0.94rem !important;
+  }
+
+  .text-xs {
+    font-size: 0.74rem !important;
+  }
+}
+
