@@ -14,6 +14,8 @@ export const metadata = {
   
   And honestly? It's fun. Messing with this page, tweaking it, writing whatever pops into my head, it's a nice break from everything else. I don't have to overthink it or make it perfect. It's just me, a keyboard, and some thoughts. No pressure, no rules.
   
-  So yeah, that's the point, I guess. It's a mix of selfish and not-so selfish reasons. A place to think out loud, keep track of my own mess, and maybe connect with a few people along the way. We'll see where it goes. For now, I'm just gonna keep writing and figure it out as I roll.`
+  So yeah, that's the point, I guess. It's a mix of selfish and not-so selfish reasons. A place to think out loud, keep track of my own mess, and maybe connect with a few people along the way. We'll see where it goes. For now, I'm just gonna keep writing and figure it out as I roll.
+  
+  Thanks for reading!`
   
   
