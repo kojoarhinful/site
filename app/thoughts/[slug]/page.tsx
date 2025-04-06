@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPostBySlug } from "../posts";
 import ReactMarkdown from "react-markdown";
+import Comments from "../../../components/comments";
 
 export default function ThoughtPage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
@@ -23,6 +24,10 @@ export default function ThoughtPage({ params }: { params: { slug: string } }) {
         <ReactMarkdown className="prose prose-sm text-amber-900/80">
           {post.content}
         </ReactMarkdown>
+      </div>
+
+      <div className="mt-8">
+        <Comments />
       </div>
 
       <div className="mt-8 pt-4 border-t border-amber-700/10">
