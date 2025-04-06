@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@giscus/react": "^3.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@tailwindcss/typography": "^0.5.10",
     "class-variance-authority": "^0.7.0",
