@@ -6,7 +6,8 @@ import * as checkMic from "./check-mic";
 export const allPosts = [
   {
     ...isThisReallyForMe.metadata,
-    content: isThisReallyForMe.content, 
+    content: isThisReallyForMe.content,
+  },
   {
     ...whatsThePoint.metadata,
     content: whatsThePoint.content,
