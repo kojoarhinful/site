@@ -5,9 +5,9 @@ const projects = [
   {
     title: "Ghana Made",
     description:
-      "An e-commerce platform showcasing authentic Ghanaian craftsmanship. Built on my iPhone 6s, I don't have a laptop. 😕",
+      "An e-commerce platform showcasing authentic Ghanaian craftsmanship. Built on my iPhone 6s, no laptop. 😕",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/kojoarhinful/GhanaMade",
+    github: "https://github.com/kojoarhinful/ghanamade",
     live: "https://ghanamade.vercel.app",
   },
   {
@@ -23,45 +23,44 @@ const projects = [
 export default function BuildPage() {
   return (
     <div>
-      <h1 className="text-xl sm:text-lg font-light mb-2">builds</h1>
-      <p className="text-base sm:text-sm text-amber-800/60 mb-6">
-        I like hacking on tiny side projects.
+      <h1 className="text-lg font-light mb-2">builds</h1>
+      <p className="text-sm text-amber-800/60 mb-6">
+        I've tried a lot of things so far, but these are the ones I could showcase for now. Please If you find any issue or got an idea let me know.
       </p>
 
-      <div className="space-y-6 mt-8">
+      <div>
         {projects.map((project, index) => (
-          <div key={index} className="border border-amber-700/10 rounded-lg overflow-hidden bg-amber-50/30 p-5">
-            <h2 className="text-lg sm:text-base font-medium mb-2">{project.title}</h2>
-            <p className="text-base sm:text-sm text-amber-900/80 mb-4">{project.description}</p>
+          <div key={index} className="border-t border-amber-700/10 py-3">
+            <div className="flex justify-between items-center">
+              <h2 className="text-lg">{project.title}</h2>
+            </div>
+            <p className="text-sm mt-1">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1.5 mt-2 mb-2">
               {project.technologies.map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="text-sm sm:text-xs px-2 py-1 bg-amber-100/80 text-amber-800 rounded-full"
-                >
+                <span key={techIndex} className="text-sm px-1.5 py-0.5 bg-amber-100/80 text-amber-800 rounded-sm">
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4 mt-2">
               <Link
                 href={project.github}
-                className="flex items-center text-sm sm:text-xs text-amber-800 hover:text-amber-900"
+                className="flex items-center text-sm text-amber-800 hover:text-amber-900"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github size={16} className="sm:w-3.5 sm:h-3.5 mr-1" />
+                <Github size={14} className="mr-1" />
                 Source Code
               </Link>
               <Link
                 href={project.live}
-                className="flex items-center text-sm sm:text-xs text-amber-800 hover:text-amber-900"
+                className="flex items-center text-sm text-amber-800 hover:text-amber-900"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ExternalLink size={16} className="sm:w-3.5 sm:h-3.5 mr-1" />
+                <ExternalLink size={14} className="mr-1" />
                 Live Demo
               </Link>
             </div>
@@ -71,4 +70,3 @@ export default function BuildPage() {
     </div>
   )
 }
-
