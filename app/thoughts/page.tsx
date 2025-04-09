@@ -6,8 +6,7 @@ export default function ThoughtsPage() {
     <div>
       <h1 className="text-lg font-light mb-2">thoughts</h1>
       <p className="text-sm text-amber-800/60 mb-6">
-        My words, my experience. If something is confusing let me know. If you find anything helpful consider sharing
-        it.
+        These are my own words.
       </p>
 
       <div>
