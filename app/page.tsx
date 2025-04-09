@@ -30,30 +30,24 @@ export default function Home() {
       </div>
 
       <div className="mt-10">
-        <p className="text-sm">
-          find me here:{" "}
+        <h2 className="text-base font-medium mb-3">Get in touch</h2>
+        <p className="text-sm leading-relaxed">
+          The quickest way to reach me is by messaging me on the bird app{" "}
           <Link
             href="https://twitter.com/kojoarhinful_"
-            className="underline"
+            className="text-amber-800/60 hover:text-amber-900"
             target="_blank"
             rel="noopener noreferrer"
           >
-            twitter
-          </Link>{" "}
-          /{" "}
-          <Link href="#" className="underline" target="_blank" rel="noopener noreferrer">
-            linkedin
-          </Link>{" "}
-          /{" "}
-          <Link href="https://github.com/kojoarhinful" className="underline" target="_blank" rel="noopener noreferrer">
-            github
+            @kojoarhinful_
           </Link>
-        </p>
-        <p className="text-sm">
-          reach out to me:{" "}
-          <Link href="mailto:kojoarhinful@outlook.com" className="underline">
+          . If you prefer a more serious medium, feel free to send me an email at{" "}
+          <Link href="mailto:kojoarhinful@outlook.com" className="text-amber-800/60 hover:text-amber-900">
             kojoarhinful@outlook.com
           </Link>
+          .
+          <br />I try to make a point to respond to every message I receive. Some of my closest friends were strangers I
+          decided to message on a whim.
         </p>
       </div>
     </div>
