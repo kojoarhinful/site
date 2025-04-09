@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="my-8">
-        <div className="companion-banner">build things that matter</div>
+        <div className="companion-banner border-2 border-dashed border-amber-700/40">build things that matter</div>
         <p className="text-sm text-amber-800/60 mt-6">
           Unicus modus ad opus magnum faciendum est amare quod facis.
           <br />
@@ -59,4 +59,3 @@ export default function Home() {
     </div>
   )
 }
-
