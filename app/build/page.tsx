@@ -25,7 +25,7 @@ export default function BuildPage() {
     <div>
       <h1 className="text-lg font-light mb-2">builds</h1>
       <p className="text-sm text-amber-800/60 mb-6">
-        I've tried a lot of things so far, but these are the ones I could showcase for now. Please If you find any issue or got an idea let me know.
+        I've tried a lot of things so far, but these are the ones I could showcase for now.
       </p>
 
       <div>
