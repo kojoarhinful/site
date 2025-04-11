@@ -5,8 +5,8 @@ import * as checkMic from "./check-mic";
 
 export const allPosts = [
   {
-    ...isBreakMold.metadata,
-    content: isBreakMold.content,
+    ...breakMold.metadata,
+    content: breakMold.content,
   },
   {
     ...whatsThePoint.metadata,
