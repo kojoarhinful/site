@@ -1,20 +1,30 @@
-"use client"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
-    <nav className="py-6 mt-6">
+    <nav className="py-4 mt-10 sm:mt-12 md:mt-6 lg:mt-4 max-w-xl mx-auto">
       <ul className="flex space-x-5 text-sm">
         <li>
-          <Link href="/" className={pathname === "/" ? "underline text-amber-900 font-medium" : ""}>
+          <Link
+            href="/"
+            className={
+              pathname === "/" ? "underline text-amber-900 font-medium" : ""
+            }
+          >
             home
           </Link>
         </li>
         <li>
-          <Link href="/build" className={pathname === "/build" ? "underline text-amber-900 font-medium" : ""}>
+          <Link
+            href="/build"
+            className={
+              pathname === "/build" ? "underline text-amber-900 font-medium" : ""
+            }
+          >
             builds
           </Link>
         </li>
@@ -32,6 +42,5 @@ export default function Navigation() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
-
