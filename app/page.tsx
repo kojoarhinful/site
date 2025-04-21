@@ -1,6 +1,7 @@
 import Link from "next/link";
 import fs from "fs/promises";
 import path from "path";
+import { SigmaSquare } from "lucide-react"; // Import the SigmaSquare icon
 
 type Post = {
   slug: string;
@@ -77,7 +78,6 @@ export default async function Home() {
                 key={post.slug}
                 className="border-t border-amber-700/10 py-3"
               >
-                {/* Use justify-between to push the date to the right edge */}
                 <div className="flex justify-between items-center">
                   <Link
                     href={`/thoughts/${post.slug}`}
@@ -103,9 +103,12 @@ export default async function Home() {
       </div>
 
       <div className="my-8">
-        <div className="companion-banner border-2 border-dashed border-amber-700/40 mt-6">
-          Lesson notes
-        </div>
+        <Link href="/lesson">
+           <div className="companion-banner border-2 border-dashed border-amber-700/40 mt-6 p-3 flex items-center gap-2 hover:bg-amber-50/50 transition-colors duration-200">
+             <SigmaSquare size={14} className="text-amber-800/60" />
+             <span className="text-sm">Lesson notes</span>
+           </div>
+         </Link>
         <p className="text-sm text-amber-800/60 mt-6">
           Unicus modus ad opus magnum faciendum est amare quod facis.
           <br />
