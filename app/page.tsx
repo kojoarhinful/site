@@ -1,8 +1,53 @@
-import Link from "next/link"
+import Link from "next/link";
+import fs from "fs/promises";
+import path from "path";
 
-export default function Home() {
+type Post = {
+  slug: string;
+  title: string;
+  date: string;
+};
+
+export default async function Home() {
+  const postsDir = path.join(process.cwd(), "app/thoughts/posts");
+
+  let postFiles: string[] = [];
+  try {
+    postFiles = await fs.readdir(postsDir);
+    postFiles = postFiles.filter((file) => file.endsWith(".tsx"));
+  } catch (error) {
+    console.error("Error reading posts directory:", error);
+  }
+
+  const posts: Post[] = await Promise.all(
+    postFiles.map(async (file) => {
+      try {
+        const module = await import(`./thoughts/posts/${file}`);
+        const meta = module.meta || module.metadata || {};
+
+        return {
+          slug: meta.slug || file.replace(/\.tsx$/, ""),
+          title: meta.title || "Untitled",
+          date: meta.date || "1970-01-01",
+        };
+      } catch (error) {
+        console.error(`Error importing ${file}:`, error);
+        return {
+          slug: file.replace(/\.tsx$/, ""),
+          title: "Untitled",
+          date: "1970-01-01",
+        };
+      }
+    })
+  );
+
+  const latestPosts: Post[] = posts
+    .filter((post) => post.title !== "Untitled")
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 5);
+
   return (
-    <div>
+    <div className="max-w-xl mx-auto">
       <div>
         <h1 className="text-lg font-normal mb-1">Bismark Arhinful</h1>
         <p className="text-sm text-amber-800/60 mb-6">Software Engineer</p>
@@ -10,52 +55,63 @@ export default function Home() {
 
       <div className="space-y-5">
         <p className="text-sm">
-          Building intuitive web products focused on user experience and interaction. Creating software that makes a
-          difference in how people work and interact.
+          Building intuitive web products focused on user experience and
+          interaction. Creating software that makes a difference in how people work
+          and interact.
         </p>
 
         <p className="text-sm">
-          I'm passionate about frontend tooling and infrastructure. Currently exploring the JavaScript/TypeScript
-          ecosystem while learning UI design principles and system architecture.
+          I'm mostly interested in frontend tooling and infrastructure.
+          Currently exploring the JavaScript/TypeScript ecosystem while learning UI
+          design principles and system architecture.
         </p>
       </div>
 
+      <div className="mt-8">
+        <h2 className="text-sm text-amber-800/60 mb-3">Recent posts</h2>
+
+        <div className="space-y-0">
+          {latestPosts.length > 0 ? (
+            latestPosts.map((post) => (
+              <div
+                key={post.slug}
+                className="border-t border-amber-700/10 py-3"
+              >
+                {/* Use justify-between to push the date to the right edge */}
+                <div className="flex justify-between items-center">
+                  <Link
+                    href={`/thoughts/${post.slug}`}
+                    className="text-sm hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                  <span className="text-xs text-amber-800/60">{post.date}</span>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-sm text-amber-800/60">No posts available</p>
+          )}
+
+          <div className="pt-2 mt-1">
+            <span className="text-sm">See </span>
+            <Link href="/thoughts" className="text-sm">
+              <span className="text-amber-800/60 underline">all posts</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <div className="my-8">
-        <div className="companion-banner border-2 border-dashed border-amber-700/40">build things that matter</div>
+        <div className="companion-banner border-2 border-dashed border-amber-700/40 mt-6">
+          Lesson notes
+        </div>
         <p className="text-sm text-amber-800/60 mt-6">
           Unicus modus ad opus magnum faciendum est amare quod facis.
           <br />
           The only way to do great work is to love what you do.
         </p>
       </div>
-
-      <div className="mt-10">
-        <p className="text-sm">
-          find me here:{" "}
-          <Link
-            href="https://twitter.com/kojoarhinful_"
-            className="underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            twitter
-          </Link>{" "}
-          /{" "}
-          <Link href="https://linkedin.com/in/kojoarhinful" className="underline" target="_blank" rel="noopener noreferrer">
-            linkedin
-          </Link>{" "}
-          /{" "}
-          <Link href="https://github.com/kojoarhinful" className="underline" target="_blank" rel="noopener noreferrer">
-            github
-          </Link>
-        </p>
-        <p className="text-sm">
-          reach out to me:{" "}
-          <Link href="mailto:kojoarhinful@outlook.com" className="underline">
-            kojoarhinful@outlook.com
-          </Link>
-        </p>
-      </div>
     </div>
-  )
+  );
 }
