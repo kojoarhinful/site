@@ -40,6 +40,18 @@ export default function Navigation() {
             thoughts
           </Link>
         </li>
+        <li>
+          <Link
+            href="/lesson"
+            className={
+              pathname === "/lesson" || pathname.startsWith("/lesson/")
+                ? "underline text-amber-900 font-medium"
+                : ""
+            }
+          >
+            lessons
+          </Link>
+        </li>
       </ul>
     </nav>
   );
