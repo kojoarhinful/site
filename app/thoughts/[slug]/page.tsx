@@ -12,7 +12,8 @@ export default function ThoughtPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div>
+    // Add max-w-xl mx-auto to center the content
+    <div className="max-w-xl mx-auto">
       <h1 className="text-lg font-light mb-2">{post.title}</h1>
       <div className="flex items-center text-amber-800/60 mb-6">
         <span className="text-xs">{post.date}</span>
@@ -21,7 +22,7 @@ export default function ThoughtPage({ params }: { params: { slug: string } }) {
       </div>
 
       <div>
-        <ReactMarkdown className="prose prose-sm text-amber-900/80">
+        <ReactMarkdown className="prose prose-sm text-amber-800/80">
           {post.content}
         </ReactMarkdown>
       </div>
