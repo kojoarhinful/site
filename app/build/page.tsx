@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { ExternalLink, Github } from "lucide-react"
+import Link from "next/link";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -18,17 +18,18 @@ const projects = [
     github: "https://github.com/kojoarhinful/intellect-assault",
     live: "https://intellectassault.vercel.app",
   },
-]
+];
 
 export default function BuildPage() {
   return (
-    <div>
+  
+    <div className="max-w-xl mx-auto">
       <h1 className="text-lg font-light mb-2">builds</h1>
       <p className="text-sm text-amber-800/60 mb-6">
-        I've tried a lot of things so far, but these are the ones I could showcase for now.
+        These are the ones I could showcase for now.
       </p>
 
-      <div>
+      <div className="mt-8">
         {projects.map((project, index) => (
           <div key={index} className="border-t border-amber-700/10 py-3">
             <div className="flex justify-between items-center">
@@ -38,7 +39,10 @@ export default function BuildPage() {
 
             <div className="flex flex-wrap gap-1.5 mt-2 mb-2">
               {project.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className="text-sm px-1.5 py-0.5 bg-amber-100/80 text-amber-800 rounded-sm">
+                <span
+                  key={techIndex}
+                  className="text-sm px-1.5 py-0.5 bg-amber-50/80 text-amber-800 rounded-sm"
+                >
                   {tech}
                 </span>
               ))}
@@ -68,5 +72,5 @@ export default function BuildPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
