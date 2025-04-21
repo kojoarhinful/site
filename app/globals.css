@@ -56,13 +56,13 @@ a:hover {
 }
 
 .companion-banner {
-  background: #d9c19c;
+  background:  #f0e4d0;
   color: #4b3621;
   padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   border-radius: 6px;
   display: inline-block;
-  font-weight: 400;
+  font-weight: 450;
 }
 
 /* Text improvements */
@@ -78,10 +78,14 @@ a:hover {
   color: #7a6a5a;
 }
 
+em {
+  @apply italic font-medium text-amber-900;
+}
+
 /* Mobile responsiveness improvements */
 @media (max-width: 640px) {
   h1 {
-    font-size: 1.3rem !important;
+    font-size: 1.32rem !important;
   }
 
   p,
@@ -93,4 +97,3 @@ a:hover {
     font-size: 0.74rem !important;
   }
 }
-
