@@ -1,7 +1,7 @@
 import Link from "next/link";
 import fs from "fs/promises";
 import path from "path";
-import { SigmaSquare } from "lucide-react"; // Import the SigmaSquare icon
+import { SigmaSquare } from "lucide-react";
 
 type Post = {
   slug: string;
@@ -104,15 +104,15 @@ export default async function Home() {
 
       <div className="my-8">
         <Link href="/lesson">
-           <div className="companion-banner border-2 border-dashed border-amber-700/40 mt-6 p-3 flex items-center gap-2 hover:bg-amber-50/50 transition-colors duration-200">
-             <SigmaSquare size={14} className="text-amber-800/60" />
-             <span className="text-sm">Lesson notes</span>
-           </div>
-         </Link>
+          <div className="companion-banner border-2 border-dashed border-amber-700/40 mt-6 p-3 flex items-center gap-2 hover:bg-amber-50/50 transition-colors duration-200">
+            <SigmaSquare size={14} className="text-amber-800/60" />
+            <span className="text-sm font-normal">Lesson notes</span>
+          </div>
+        </Link>
         <p className="text-sm text-amber-800/60 mt-6">
-          Unicus modus ad opus magnum faciendum est amare quod facis.
+          Tempus et fortuna omnia regunt.
           <br />
-          The only way to do great work is to love what you do.
+          Time and chance shape all <span className="underline decoration-dashed">great</span> outcomes.
         </p>
       </div>
     </div>
