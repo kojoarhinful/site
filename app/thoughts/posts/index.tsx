@@ -1,5 +1,4 @@
 import * as procrastination from "./procrastination";
-import * as breakMold from "./break-mold";
 import * as whatsThePoint from "./whats-the-point";
 import * as checkMic from "./check-mic";
 
@@ -8,11 +7,7 @@ export const allPosts = [
    {
     ...procrastination.metadata,
     content: procrastination.content,
-  },  
-  {
-     ...breakMold.metadata,
-     content: breakMold.content,
-  }, 
+  },   
   {
     ...whatsThePoint.metadata,
     content: whatsThePoint.content,
